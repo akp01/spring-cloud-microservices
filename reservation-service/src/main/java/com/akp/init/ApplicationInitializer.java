@@ -1,4 +1,4 @@
-package com.akp.rs.init;
+package com.akp.init;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,9 +12,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import com.akp.rs.repository.ProductRepository;
-import com.akp.rs.repository.entity.Product;
-import com.akp.rs.repository.entity.ProductJP;
+import com.akp.repository.ProductRepository;
+import com.akp.repository.entity.Product;
+import com.akp.repository.entity.ProductJP;
 
 
 
@@ -26,19 +26,19 @@ public class ApplicationInitializer implements CommandLineRunner {
 	// ProductRepository productRepository;
 
 	@Autowired
-	private ProductRepository productRepositoryMD;
+	private ProductRepository productRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
 
 		// productRepository.save(getMockProductsJP());
 
-		List<Product> products = (List<Product>) productRepositoryMD.findAll();
+		List<Product> products = (List<Product>) productRepository.findAll();
 
 		if (!StringUtils.isEmpty(products) && !products.isEmpty()) {
-			productRepositoryMD.deleteAll();
+			productRepository.deleteAll();
 		}
-		productRepositoryMD.save(getMockProductsMD());
+		productRepository.save(getMockProductsMD());
 		logger.info(
 				"Application started with command-line arguments: {} . \n To kill this application, press Ctrl + C.",
 				Arrays.toString(args));

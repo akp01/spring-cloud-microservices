@@ -1,6 +1,6 @@
-package com.akp.rs.repository;
+package com.akp.repository;
 
-import com.akp.rs.repository.entity.Product;
+import com.akp.repository.entity.Product;
 
 public class ProductRepoImpl implements ProductRepo {
 

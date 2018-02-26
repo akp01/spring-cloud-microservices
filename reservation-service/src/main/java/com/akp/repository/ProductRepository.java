@@ -1,12 +1,12 @@
-package com.akp.rs.repository;
+package com.akp.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.akp.rs.repository.entity.Product;
+import com.akp.repository.entity.Product;
 
-@Repository("productRepositoryMD")
+@Repository("productRepository")
 public interface ProductRepository extends MongoRepository<Product, Long>, ProductRepo {
 	
 	public Product findByName(String name);

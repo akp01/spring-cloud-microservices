@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.akp.rs.controller;
+package com.akp.controller;
 
 import java.util.List;
 
@@ -14,11 +14,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.akp.rs.repository.ProductRepository;
-import com.akp.rs.repository.entity.Product;
-
-
-
+import com.akp.repository.ProductRepository;
+import com.akp.repository.entity.Product;
 
 @RestController
 public class ProductController {
@@ -29,13 +26,13 @@ public class ProductController {
 	ProductRepository productRepository;*/
 	
 	@Autowired
-	ProductRepository productRepositoryMD;
+	ProductRepository productRepository;
 
 	@GetMapping("/products")
 	public ResponseEntity<List<Product>> getProducts() {
 
 //		List<Product> products = productRepository.findAll();
-		List<Product> products = (List<Product>) productRepositoryMD.findAll();
+		List<Product> products = (List<Product>) productRepository.findAll();
 		ResponseEntity<List<Product>> response = new ResponseEntity<>(products, HttpStatus.OK);
 
 		return response;
@@ -46,7 +43,7 @@ public class ProductController {
 
 		Product product = null;
 		try {
-			product = productRepositoryMD.findByName("product4");
+			product = productRepository.findByName("product4");
 		} catch (Exception e) {
 			logger.error("Exception : " + e);
 		}
@@ -60,7 +57,7 @@ public class ProductController {
 
 		Product product = null;
 		try {
-			product = productRepositoryMD.findByName("product4");
+			product = productRepository.findByName("product4");
 		} catch (Exception e) {
 			logger.error("Exception : " + e);
 		}
@@ -76,7 +73,7 @@ public class ProductController {
 		ResponseEntity<?> response = null;
 
 		try {
-			product = productRepositoryMD.findProductByType(productType);
+			product = productRepository.findProductByType(productType);
 			response = new ResponseEntity<Product>(product, HttpStatus.OK);
 		} catch (Exception e) {
 			logger.error("Exception : " + e);

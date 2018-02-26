@@ -1,4 +1,4 @@
-package com.akp.rs.security;
+package com.akp.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +18,6 @@ public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+		auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
 	}
 }

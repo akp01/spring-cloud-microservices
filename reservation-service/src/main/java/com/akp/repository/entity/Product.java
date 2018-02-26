@@ -1,4 +1,4 @@
-package com.akp.rs.repository.entity;
+package com.akp.repository.entity;
 
 import java.io.Serializable;
 

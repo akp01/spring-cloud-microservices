@@ -1,14 +1,10 @@
 /**
  * 
  */
-package com.akp.rs.config;
+package com.akp.config;
 
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author akp
- *
- */
 @Configuration
 public class ApplicationConfiguration {
 	

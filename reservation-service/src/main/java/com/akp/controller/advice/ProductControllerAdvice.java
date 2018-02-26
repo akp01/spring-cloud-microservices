@@ -1,11 +1,11 @@
-package com.akp.rs.controller.advice;
+package com.akp.controller.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.akp.rs.controller.ProductController;
+import com.akp.controller.ProductController;
 
 @ControllerAdvice(assignableTypes = ProductController.class)
 public class ProductControllerAdvice {
