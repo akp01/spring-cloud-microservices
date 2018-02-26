@@ -12,9 +12,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-import com.akp.rs.repository.ProductRepositoryMD;
+import com.akp.rs.repository.ProductRepository;
+import com.akp.rs.repository.entity.Product;
 import com.akp.rs.repository.entity.ProductJP;
-import com.akp.rs.repository.entity.ProductMD;
+
+
 
 @Component
 public class ApplicationInitializer implements CommandLineRunner {
@@ -24,14 +26,14 @@ public class ApplicationInitializer implements CommandLineRunner {
 	// ProductRepository productRepository;
 
 	@Autowired
-	private ProductRepositoryMD productRepositoryMD;
+	private ProductRepository productRepositoryMD;
 
 	@Override
 	public void run(String... args) throws Exception {
 
 		// productRepository.save(getMockProductsJP());
 
-		List<ProductMD> products = (List<ProductMD>) productRepositoryMD.findAll();
+		List<Product> products = (List<Product>) productRepositoryMD.findAll();
 
 		if (!StringUtils.isEmpty(products) && !products.isEmpty()) {
 			productRepositoryMD.deleteAll();
@@ -85,53 +87,53 @@ public class ApplicationInitializer implements CommandLineRunner {
 		return products;
 	}
 
-	private List<ProductMD> getMockProductsMD() {
+	private List<Product> getMockProductsMD() {
 
-		List<ProductMD> products = new ArrayList<>();
+		List<Product> products = new ArrayList<>();
 
-		ProductMD product1 = new ProductMD();
+		Product product1 = new Product();
 		product1.setProductId(101L);
 		product1.setName("product1");
 		product1.setType("type1");
 		product1.setExpiryDate(new Date().toString());
 		products.add(product1);
 
-		ProductMD product2 = new ProductMD();
+		Product product2 = new Product();
 		product2.setProductId(102L);
 		product2.setName("product2");
 		product2.setType("type2");
 		product2.setExpiryDate(new Date().toString());
 		products.add(product2);
 
-		ProductMD product3 = new ProductMD();
+		Product product3 = new Product();
 		product3.setProductId(103L);
 		product3.setName("product3");
 		product3.setType("type3");
 		product3.setExpiryDate(new Date().toString());
 		products.add(product3);
 
-		ProductMD product4 = new ProductMD();
+		Product product4 = new Product();
 		product4.setProductId(104L);
 		product4.setName("product4");
 		product4.setType("type4");
 		product4.setExpiryDate(new Date().toString());
 		products.add(product4);
 
-		ProductMD product5 = new ProductMD();
+		Product product5 = new Product();
 		product5.setProductId(105L);
 		product5.setName("product5");
 		product5.setType("type5");
 		product5.setExpiryDate(new Date().toString());
 		products.add(product5);
 
-		ProductMD product6 = new ProductMD();
+		Product product6 = new Product();
 		product6.setProductId(106L);
 		product6.setName("product6");
 		product6.setType("type6");
 		product6.setExpiryDate(new Date().toString());
 		products.add(product6);
 
-		ProductMD product7 = new ProductMD();
+		Product product7 = new Product();
 		product7.setProductId(107L);
 		product7.setName("product7");
 		product7.setType("type7");

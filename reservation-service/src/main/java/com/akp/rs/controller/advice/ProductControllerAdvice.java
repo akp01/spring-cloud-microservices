@@ -1,12 +1,14 @@
-package com.akp.rs.web.service;
+package com.akp.rs.controller.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ControllerAdvice(assignableTypes = ProductService.class)
-public class ProductServiceAdvice {
+import com.akp.rs.controller.ProductController;
+
+@ControllerAdvice(assignableTypes = ProductController.class)
+public class ProductControllerAdvice {
 
 	@ResponseStatus(HttpStatus.CONFLICT)
 	@ExceptionHandler(Exception.class)

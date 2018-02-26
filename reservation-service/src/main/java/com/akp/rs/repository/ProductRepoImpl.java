@@ -1,11 +1,11 @@
 package com.akp.rs.repository;
 
-import com.akp.rs.repository.entity.ProductMD;
+import com.akp.rs.repository.entity.Product;
 
 public class ProductRepoImpl implements ProductRepo {
 
 	@Override
-	public ProductMD findProductsByNameAsc() {
+	public Product findProductsByNameAsc() {
 		
 		
 		return null;

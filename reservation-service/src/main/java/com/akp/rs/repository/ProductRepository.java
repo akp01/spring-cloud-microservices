@@ -1,19 +1,17 @@
-/**
- * 
- */
 package com.akp.rs.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
 
-/**
- * @author akp
- *
- */
-public class ProductRepository {
+import com.akp.rs.repository.entity.Product;
+
+@Repository("productRepositoryMD")
+public interface ProductRepository extends MongoRepository<Product, Long>, ProductRepo {
 	
-	@Autowired
-	ProductRepositoryMDRepo productRepositoryMDRepo;
-	
-	
+	public Product findByName(String name);
+
+	@Query("{type:'?0'}")
+	public Product findProductByType(String productType);
 
 }

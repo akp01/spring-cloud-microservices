@@ -1,8 +1,8 @@
 package com.akp.rs.repository;
 
-import com.akp.rs.repository.entity.ProductMD;
+import com.akp.rs.repository.entity.Product;
 
 public interface ProductRepo {
-	public ProductMD findProductsByNameAsc();
+	public Product findProductsByNameAsc();
 
 }
