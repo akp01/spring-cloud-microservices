@@ -1,12 +1,12 @@
-package com.akp.eurekaservice;
+package com.akp.service.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EurekaServiceApplication {
+public class ServiceDiscoveryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaServiceApplication.class, args);
+		SpringApplication.run(ServiceDiscoveryApplication.class, args);
 	}
 }
