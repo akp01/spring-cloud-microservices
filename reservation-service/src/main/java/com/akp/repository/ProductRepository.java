@@ -6,12 +6,12 @@ import org.springframework.stereotype.Repository;
 
 import com.akp.repository.entity.Product;
 
-@Repository("productRepository")
+@Repository
 public interface ProductRepository extends MongoRepository<Product, Long>, ProductRepo {
 	
-	public Product findByName(String name);
+	public Product findByName(final String name);
 
 	@Query("{type:'?0'}")
-	public Product findProductByType(String productType);
+	public Product findProductByType(final String productType);
 
 }
